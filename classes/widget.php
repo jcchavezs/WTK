@@ -49,12 +49,17 @@ abstract class WTK_Widget extends WP_Widget
 	 */
 	private function render_form_row(WTK_Widget_Form_Element $element)
 	{
-		$id = $this->get_field_id($element->get_id());
-		$label = sprintf('%s:', $element->get_label());
 		$element_markup = $this->render_form_element($element);
 
 		if(false === $element_markup) {
 			return '';
+		}
+
+		$id = $this->get_field_id($element->get_id());
+		$label = $element->get_label();
+
+		if($element->get_type() !== 'checkbox') {
+			$label = sprintf('%s:', $label);
 		}
 
 		if ($description = $element->get_description()) {
@@ -66,9 +71,8 @@ abstract class WTK_Widget extends WP_Widget
 		switch($element->get_type()) {
 			case 'checkbox':
 				printf(
-					'%s <label for="%s">%s</label>',
+					'<label>%s %s</label>',
 					$element_markup,
-					$this->get_field_id($id),
 					$label
 				);
 				break;
@@ -82,7 +86,7 @@ abstract class WTK_Widget extends WP_Widget
 				break;
 		}
 
-		echo '<p>';
+		echo '</p>';
 	}
 
 	/**
@@ -99,6 +103,10 @@ abstract class WTK_Widget extends WP_Widget
 			case 'email':
 			case 'url':
 				return $this->render_element_as_input($element);
+				break;
+			case 'checkbox':
+			case 'radio':
+				return $this->render_element_as_input_option($element);
 				break;
 			case 'textarea':
 				return $this->render_element_as_textarea($element);
@@ -169,6 +177,25 @@ abstract class WTK_Widget extends WP_Widget
 	}
 
 	/**
+	 * Renders the provided element as an input.
+	 *
+	 * @param  WTK_Widget_Form_Element $element The element to be rendered
+	 * @return string
+	 */
+	private function render_element_as_input_option(WTK_Widget_Form_Element $element)
+	{
+		$element->add_class('widefat');
+
+		return sprintf(
+			'<input name="%s" id="%s" type="%s" %s />',
+			$this->get_field_name($element->get_name()),
+			$this->get_field_id($element->get_id()),
+			$element->get_type(),
+			($element->get_value() === 'on' ? 'checked ' : '') . $this->render_element_attributes($element)
+		);
+	}
+
+	/**
 	 * Renders the provided element as a select.
 	 *
 	 * @param  WTK_Widget_Form_Element $element The element to be rendered
@@ -213,7 +240,9 @@ abstract class WTK_Widget extends WP_Widget
 	 */
 	private function render_element_as_textarea(WTK_Widget_Form_Element $element)
 	{
-		$element->add_class('widefat');
+		$element
+			->set_attribute('rows', 4)
+			->add_class('widefat');
 
 		return sprintf(
 			'<textarea name="%s" id="%s" %s>%s</textarea>',
