@@ -3,26 +3,28 @@ msgstr ""
 "Project-Id-Version: Widget Toolkit v1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-08-07 08:10:54+0000\n"
-"Last-Translator: sysco <jose.carlos.chavez@sysco.no>\n"
+"PO-Revision-Date: 2015-08-07 13:36+0100\n"
+"Last-Translator: José Carlos Chávez <jcchavezs@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: CSL v1.x\n"
-"X-Poedit-Language: Spanish\n"
-"X-Poedit-Country: SPAIN\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Poedit-Basepath: \n"
-"X-Poedit-Bookmarks: \n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"Language: es_ES\n"
+"X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Textdomain-Support: yes"
 
-#: classes/widget.php:141
-#: classes/widget.php:144
-#@ wtk
+# @ wtk
+#: classes/widget.php:149 classes/widget.php:153
 msgid "Select an image"
 msgstr "Seleccione una imagen"
 
+# @ wtk
+#: classes/widget.php:150
+msgid "Insert into widget"
+msgstr "Insertar en el widget"

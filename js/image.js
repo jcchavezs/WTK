@@ -1,18 +1,18 @@
 'use strict';
 
 (function($){
-	wtk.openUploader = function(button, currentAttachmentId) {
-		var frame = wp.media({
-            title : button.title,
-            multiple : false,
-            library : { type : 'image'},
-            button : { text : 'Insert into widget' },
-        });
-
-        var
-            $row = $(button).parents('.wtk-row:first'),
+	wtk.openUploader = function(button) {
+        var $button = $(button),
+            $row = $button.parents('.wtk-row:first'),
             $imagePlaceholder = $row.find('.wtk-image-placeholder'),
             $imageInput = $row.find('.wtk-image-input');
+
+        var frame = wp.media({
+            title : $button.data('uploader-title'),
+            multiple : false,
+            library : { type : 'image'},
+            button : { text : $button.data('uploader-button') },
+        });
 
         frame.on( 'select', function() {
             var attachment = frame.state().get('selection').first().toJSON();
@@ -41,9 +41,12 @@
         });
 
         frame.on('open',function() {
-            let selection = frame.state().get('selection'), attachment;
+            let
+                selection = frame.state().get('selection'),
+                attachment,
+                currentAttachmentId = $imageInput.val();
 
-            if(typeof currentAttachmentId === 'undefined')
+            if(currentAttachmentId === '')
                 return;
 
             attachment = wp.media.attachment(currentAttachmentId);

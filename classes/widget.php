@@ -146,8 +146,9 @@ abstract class WTK_Widget extends WP_Widget
 
 		$output .=  '<a
 						href="#"
-						title="' . __('Select an image', 'wtk') . '"
-						onclick="wtk.openUploader(this' . ( $image_id ? ',' . $image_id : '' ) . '); return false;"
+						data-uploader-title="' . __('Select an image', 'wtk') . '"
+						data-uploader-button="' . __('Insert into widget', 'wtk') . '"
+						onclick="wtk.openUploader(this); return false;"
 						class="button wtk-button-block"
 					>' . __('Select an image', 'wtk') . '</a>';
 
