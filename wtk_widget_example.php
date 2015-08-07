@@ -6,7 +6,7 @@ final class wtk_widget_example extends WTK_Widget
 	public function __construct() {
 		parent::__construct(
 			'wtk_widget_example',
-			'An example of widget',
+			'WTK Widget Example',
 			array( 'description' => 'Description for the widget' )
 		);
 	}
@@ -27,20 +27,26 @@ final class wtk_widget_example extends WTK_Widget
 			array(
 				'name' => 'description',
 				'label' => 'Description',
-				'type' => 'textarea'
+				'type' => 'textarea',
+				'default' => 'This is a default description'
 			),
 			array(
 				'name' => 'select',
 				'label' => 'Select',
 				'type' => 'select',
-				'options' => array($this->test_options())
+				'options' => array($this, 'test_options')
+			),
+			array(
+				'name' => 'checkbox',
+				'label' => 'This is a checkbox',
+				'type' => 'checkbox'
 			)
 		);
 	}
 
 	public function test_options()
 	{
-		return array('Option A', 'Option B', 'Option C')
+		return array('Option A', 'Option B', 'Option C');
 	}
 
 	public function widget($args, $instance)
