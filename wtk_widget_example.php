@@ -66,7 +66,7 @@ final class wtk_widget_example extends WTK_Widget
 
 			echo
 				'<dt>' . $element->get_label() . '</dt>'
-				. '<dd>' . $element->get_value() . '</dd>';
+				. '<dd>' . $instance[$element->get_name()] . '</dd>';
 		}
 
 		echo '</dl>';
