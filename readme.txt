@@ -1,4 +1,4 @@
-=== WTK ===
+=== Widget Toolkit ===
 
 Contributors:       jcchavezs
 Tags:               widget, form, wordpress, toolkit  

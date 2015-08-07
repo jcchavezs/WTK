@@ -1,4 +1,4 @@
-# WTK
+# Wordpress Widget Toolkit
 
 **Contributors:**      [jcchavezs](https://github.com/jcchavezs)  
 **Tags:**              widget, form, wordpress, toolkit  
