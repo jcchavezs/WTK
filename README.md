@@ -1,7 +1,7 @@
 # Wordpress Widget Toolkit
 
 **Contributors:**      [jcchavezs](https://github.com/jcchavezs)  
-**Tags:**              widget, form, wordpress, toolkit  
+**Tags:**              widget, form, wordpress, toolkit, wtk  
 **Requires at least:** 3.8.0  
 **Tested up to:**      4.3  
 **Stable tag:**        1.0.0  
@@ -10,7 +10,9 @@
 
 ## Description
 
-WTK is a toolkit for creating forms in widgets and handle the saving of its data in an easy way.
+WTK is a toolkit for creating forms for the administration of widgets which includes different types of elements: text, textarea, select, checkbox, image attachment, etc.
+
+It also handles the rendering of the form and the saving of the data allowing you to focus on the frontend part of the widget.
 
 **[Download plugin on wordpress.org](http://wordpress.org/plugins/wtk/)**
 
