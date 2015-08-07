@@ -16,7 +16,7 @@ final class WTK_Widget_Form_Element
 
 	protected $options = array();
 
-	protected $value = array();
+	protected $value;
 
     protected $filters = array('trim');
 
@@ -195,16 +195,42 @@ final class WTK_Widget_Form_Element
         return $this;
     }
 
+    /**
+     * Adds a CSS class to the element.
+     *
+     * @param string $class The CSS class to be added.
+     *
+     * @return self
+     */
     public function add_class($class)
     {
-    	$this->attributes['class'] .= ' ' . $class;
+    	$this->attributes['class'] .= ' ' . trim($class);
+
+        return $this;
     }
 
+    /**
+     * Set the value of an attribute.
+     *
+     * @param string $key   The key name for the attribute.
+     * @param string $value The value for the attribute.
+     *
+     * @return self
+     */
     public function set_attribute($key, $value)
     {
         $this->attributes[$key] = $value;
+
+        return $this;
     }
 
+    /**
+     * Returns the value of an attribute.
+     *
+     * @param  string              $key           The key name of the attribute
+     * @param  null|string|boolean $default_value The default value in case the attribute haven't been declared before.
+     * @return string
+     */
     public function get_attribute($key, $default_value = false)
     {
         return array_key_exists($key, $this->attributes) ? $this->attributes[$key] : $default_value;
