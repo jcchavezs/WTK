@@ -1,5 +1,11 @@
 <?php
 
+if(!class_exists('WTK_Widget')) {
+	add_action('admin_notices', function() {
+		echo '<div class="error"><p>Please enable the WTK plugin.</p></div>';
+	});
+}
+
 final class wtk_widget_example extends WTK_Widget
 {
 
