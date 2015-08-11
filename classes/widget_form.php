@@ -2,6 +2,10 @@
 
 final class WTK_Widget_Form
 {
+	/**
+	 * The elements of the array.
+	 * @var array
+	 */
 	protected $elements = array();
 
 	/**

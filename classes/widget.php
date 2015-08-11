@@ -2,6 +2,10 @@
 
 abstract class WTK_Widget extends WP_Widget
 {
+	/**
+	 * The form associated with the widget.
+	 * @var WTK_Widget_Form
+	 */
 	protected $form;
 
 	/**
@@ -44,7 +48,8 @@ abstract class WTK_Widget extends WP_Widget
 	}
 
 	/**
-	 * Echoes the markup of the row for the provided element
+	 * Echoes the markup of the row for the provided element.
+	 *
 	 * @param  WTK_Widget_Form_Element $element The element to be rendered
 	 */
 	private function render_form_row(WTK_Widget_Form_Element $element)

@@ -2,22 +2,66 @@
 
 final class WTK_Widget_Form_Element
 {
+    /**
+     * The ID of the element.
+     *
+     * @var [type]
+     */
 	protected $id;
 
+    /**
+     * The name of the element.
+     *
+     * @var string
+     */
 	protected $name;
 
+    /**
+     * The type of element.
+     *
+     * @var string
+     */
 	protected $type;
 
+    /**
+     * The label of the element.
+     *
+     * @var string
+     */
 	protected $label;
 
+    /**
+     * The description for the element.
+     *
+     * @var string
+     */
 	protected $description = '';
 
+    /**
+     * The HTML attributes for the element.
+     *
+     * @var array
+     */
 	protected $attributes = array('class' => '');
 
+    /**
+     * The options in case a select or radio element.
+     *
+     * @var array
+     */
 	protected $options = array();
 
+    /**
+     * The current value of the element
+     *
+     * @var int|string|null
+     */
 	protected $value;
 
+    /**
+     * The filters that will be applied to the value of the element.
+     * @var array
+     */
     protected $filters = array('trim');
 
 	public function __construct(array $config)
