@@ -5,7 +5,7 @@
  * Description:	 A toolkit for creating widgets in an easy way.
  * Author:       José Carlos Chávez <jcchavezs@gmail.com>
  * Author URI:   http://github.com/jcchavezs
- * Version:      1.0.0
+ * Version:      1.0.1
  * Github Plugin URI: https://github.com/jcchavezs/wtk
  * Github Branch: master
  */
@@ -48,8 +48,6 @@ add_action( 'plugins_loaded', 'wtk_load_textdomain' );
 
 /**
  * Load plugin textdomain.
- *
- * @since 1.0.0
  */
 function wtk_load_textdomain() {
 	load_plugin_textdomain( 'wtk', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
